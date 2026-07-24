@@ -1,4 +1,4 @@
-const sqlite3 = require("sqlite3");
+const sqlite3 = require("../arquivos.gitignore/node_modules/sqlite3/lib/sqlite3");
 const { open } = require("sqlite");
 const path = require("path");
 const bcrypt = require("bcrypt");
