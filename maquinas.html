@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Máquinas</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="cabecalho">
+
+        <img src="img/logo.png" class="logo">
+
+        <div class="titulo">
+
+            <h1>Sistema de Máquinas</h1>
+
+            <p>Cadastro de Máquinas</p>
+
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">🏠 Início</a>
+
+        <a href="maquinas.html">🖥️ Máquinas</a>
+
+        <a href="manuais.html">📚 Manuais</a>
+
+        <a href="manutencoes.html">🔧 Manutenções</a>
+
+        <a href="cadastro-maquina.html" id="menuCadastro">
+
+            ➕ Cadastrar Máquina
+
+        </a>
+
+    </nav>
+
+</header>
+
+<main class="container">
+
+    <section class="pesquisa">
+
+        <h2>Pesquisar Máquina</h2>
+
+        <input
+            type="text"
+            id="pesquisa"
+            placeholder="Digite o nome da máquina">
+
+    </section>
+
+    <section>
+
+        <h2>Máquinas Cadastradas</h2>
+
+        <div id="lista-maquinas"></div>
+
+    </section>
+
+</main>
+
+<script src="js/maquinas.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema de Máquinas</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="cabecalho">
+
+        <img src="img/logo.png" alt="Logo da Instituição" class="logo">
+
+        <div class="titulo">
+
+            <h1>Sistema de Máquinas</h1>
+
+            <p>Portal de Manutenção e Informações</p>
+
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="usuarios.html" id="menuUsuarios"> 👥 Usuários</a>
+
+    <a href="index.html">🏠 Início</a>
+
+    <a href="maquinas.html">🖥️ Máquinas</a>
+
+    <a href="manuais.html">📚 Manuais</a>
+
+    <a href="manutencoes.html">🔧 Manutenção</a>
+
+    <a href="cadastro-maquina.html" id="menuCadastro">
+        ➕ Cadastrar Máquina
+    </a>
+
+    <a href="cadastro-manual.html" id="menuManual">
+    📚 Cadastrar Manual
+    </a>
+
+    <a href="#" id="menuLogout">
+        🚪 Sair
+    </a>
+
+    <a href="sugestoes.html" id="menuSugestoes">
+    💬 Sugestões
+    </a>
+
+    </nav>
+
+</header>
+
+<!-- ===========================
+     DASHBOARD
+=========================== -->
+
+<section class="dashboard">
+
+    <div class="card-dashboard">
+
+        <div class="icone-card">🖥️</div>
+
+        <h3>Máquinas</h3>
+
+        <span id="totalMaquinas">0</span>
+
+    </div>
+
+    <div class="card-dashboard">
+
+        <div class="icone-card">✅</div>
+
+        <h3>Disponíveis</h3>
+
+        <span id="totalDisponiveis">0</span>
+
+    </div>
+
+    <div class="card-dashboard">
+
+        <div class="icone-card">🔧</div>
+
+        <h3>Em Manutenção</h3>
+
+        <span id="totalManutencao">0</span>
+
+    </div>
+
+    <div class="card-dashboard">
+
+        <div class="icone-card">⛔</div>
+
+        <h3>Interditadas</h3>
+
+        <span id="totalInterditadas">0</span>
+
+    </div>
+
+
+
+</section>
+
+<main class="container">
+
+    <!-- PESQUISA -->
+
+    <section class="pesquisa">
+
+        <h2>Pesquisar Máquina</h2>
+
+        <input
+            type="text"
+            id="campoPesquisa"
+            placeholder="Pesquisar máquina por nome...">
+
+    </section>
+
+    <!-- LISTA DE MÁQUINAS -->
+
+    <section class="maquinas">
+
+        <h2>Máquinas Disponíveis</h2>
+
+        <div id="lista-maquinas"></div>
+
+    </section>
+
+    <!-- SUGESTÕES -->
+
+    <form id="formSugestao">
+
+    <section class="sugestoes">
+
+        <h2>Sugestões dos Alunos</h2>
+
+        <p>
+
+            Este espaço é destinado para que os alunos possam registrar sugestões
+            de melhorias, relatar situações observadas na escola ou compartilhar
+            opiniões sobre o ambiente de aprendizagem.
+
+        </p>
+
+        <form>
+
+            <label for="nome">
+
+                Nome (opcional)
+
+            </label>
+
+            <br>
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Digite seu nome">
+
+            <br><br>
+
+            <label for="tipo">
+
+                Assunto
+
+            </label>
+
+            <br>
+
+            <select id="tipo">
+
+                <option>Sugestão</option>
+
+                <option>Problema encontrado</option>
+
+                <option>Elogio</option>
+
+                <option>Outro</option>
+
+            </select>
+
+            <br><br>
+
+            <label for="mensagem">
+
+                Mensagem
+
+            </label>
+
+            <br>
+
+            <textarea
+
+                id="mensagem"
+
+                rows="6"
+
+                placeholder="Escreva sua mensagem...">
+
+            </textarea>
+
+            <br><br>
+
+            <button type="submit">
+
+                Enviar Sugestão
+
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+<footer>
+
+    Sistema de Máquinas © 2026
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

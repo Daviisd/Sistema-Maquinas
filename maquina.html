@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detalhes da Máquina</title>
+
+    <link rel="stylesheet" href="css/maquina.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="cabecalho">
+
+        <div>
+
+            <h1>Sistema de Máquinas</h1>
+
+            <p>Detalhes da Máquina</p>
+
+        </div>
+
+    </div>
+
+</header>
+
+<main>
+
+    <section class="informacoes">
+
+        <h2 id="nomeMaquina">Carregando...</h2>
+
+        <div class="linha">
+            <strong>Fabricante</strong>
+            <span id="fabricante"></span>
+        </div>
+
+        <div class="linha">
+            <strong>Modelo</strong>
+            <span id="modelo"></span>
+        </div>
+
+        <div class="linha">
+            <strong>Localização</strong>
+            <span id="localizacao"></span>
+        </div>
+
+        <div class="linha">
+            <strong>Status</strong>
+            <span id="status"></span>
+        </div>
+
+        <div class="descricao">
+
+            <strong>Descrição</strong>
+
+            <p id="descricao"></p>
+
+        </div>
+
+    </section>
+
+    <section class="acoes-maquina">
+
+        <button id="btnEditar">
+        ✏️ Editar Máquina
+        </button>
+
+        <button id="btnExcluir">
+        🗑️ Excluir Máquina
+        </button>
+
+        <button id="btnNovaManutencao">
+        🔧 Nova Manutenção
+        </button>
+
+    </section>
+
+    <section class="historico">
+
+        <h2>Histórico de Manutenções</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Data</th>
+
+                    <th>Tipo</th>
+
+                    <th>Responsável</th>
+
+                    <th>Descrição</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tabelaManutencoes">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+</main>
+
+<script src="js/maquina.js"></script>
+
+</body>
+
+</html>

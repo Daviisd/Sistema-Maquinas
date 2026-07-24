@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastrar Manutenção</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="cabecalho">
+
+        <img src="img/logo.png" alt="Logo da Instituição" class="logo">
+
+        <div class="titulo">
+
+            <h1>Sistema de Máquinas</h1>
+
+            <p>Cadastro de Manutenção</p>
+
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">Início</a>
+
+        <a href="cadastro-maquina.html">Cadastrar Máquina</a>
+
+    </nav>
+
+</header>
+
+    <main>
+
+    <section class="formulario">
+
+        <h2>Nova Manutenção</h2>
+
+        <p>
+            Preencha as informações da manutenção realizada na máquina.
+        </p>
+
+        <form id="formManutencao">
+
+        <div class="campo">
+
+        <label for="maquina">
+        Máquina
+        </label>
+
+        <select id="maquina" required>
+
+         <option value="">
+            Selecione uma máquina
+         </option>
+
+            </select>
+
+            </div>
+
+
+
+            <label for="tipo">Tipo de Manutenção</label>
+
+            <select id="tipo" required>
+
+                <option value="">Selecione</option>
+
+                <option value="Preventiva">Preventiva</option>
+
+                <option value="Corretiva">Corretiva</option>
+
+                <option value="Preditiva">Preditiva</option>
+
+                <option value="Inspeção">Inspeção</option>
+
+            </select>
+
+            <label for="data">Data</label>
+
+            <input
+                type="date"
+                id="data"
+                required>
+
+            <label for="responsavel">Responsável</label>
+
+            <input
+                type="text"
+                id="responsavel"
+                placeholder="Nome do responsável"
+                required>
+
+            <label for="descricao">Descrição da Manutenção</label>
+
+            <textarea
+                id="descricao"
+                rows="6"
+                placeholder="Descreva detalhadamente o serviço realizado..."
+                required></textarea>
+
+            <button type="submit">
+
+                Salvar Manutenção
+
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+<footer>
+
+    Sistema de Máquinas © 2026
+
+</footer>
+
+<script src="js/cadastro-manutencao.js"></script>
+
+</body>
+
+</html>

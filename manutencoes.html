@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manutenções</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="cabecalho">
+
+        <img src="img/logo.png" class="logo">
+
+        <div class="titulo">
+
+            <h1>Sistema de Máquinas</h1>
+
+            <p>Histórico de Manutenções</p>
+
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">🏠 Início</a>
+
+        <a href="maquinas.html">🖥️ Máquinas</a>
+
+        <a href="manuais.html">📚 Manuais</a>
+
+        <a href="manutencoes.html">🔧 Manutenções</a>
+
+        <a href="cadastro-manutencao.html" id="menuCadastroManutencao">
+            ➕ Nova Manutenção
+        </a>
+
+        <a href="#" id="menuLogout">
+            🚪 Sair
+        </a>
+
+    </nav>
+
+</header>
+
+<main class="container">
+
+    <section class="pesquisa">
+
+        <h2>Pesquisar Manutenção</h2>
+
+        <input
+            type="text"
+            id="campoPesquisa"
+            placeholder="Digite o nome da máquina ou responsável">
+
+    </section>
+
+    <section>
+
+        <h2>Histórico de Manutenções</h2>
+
+        <div id="listaManutencoes"></div>
+
+    </section>
+
+</main>
+
+<footer>
+
+    Sistema de Máquinas © 2026
+
+</footer>
+
+<script src="js/manutencoes.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro de Máquina</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="cabecalho">
+
+        <img src="img/logo.png" alt="Logo da Instituição" class="logo">
+
+        <div class="titulo">
+
+            <h1>Sistema de Máquinas</h1>
+
+            <p>Portal de Cadastro e Manutenção de Equipamentos</p>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">Início</a>
+
+        <a href="index.html#maquinas">Máquinas</a>
+
+        <a href="#">Manuais</a>
+
+        <a href="#">Manutenção</a>
+
+        <a href="#">Login</a>
+
+    </nav>
+
+
+</header>
+
+
+
+<main class="container">
+
+
+<section class="form-container">
+
+
+<h1>
+    Cadastro de Máquina
+</h1>
+
+
+
+<form id="formMaquina">
+
+
+
+<!-- DADOS GERAIS -->
+
+<div class="secao">
+
+
+<h2>
+    Dados Gerais
+</h2>
+
+
+
+<div class="linha">
+
+
+<div class="campo">
+
+<label for="nome">
+
+Nome da Máquina
+
+</label>
+
+
+<input 
+type="text"
+id="nome"
+placeholder="Ex: Torno Mecânico"
+required>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="linha">
+
+
+<div class="campo">
+
+<label for="fabricante">
+
+Fabricante
+
+</label>
+
+
+<input 
+type="text"
+id="fabricante"
+placeholder="Ex: Romi">
+
+
+</div>
+
+
+
+<div class="campo">
+
+<label for="modelo">
+
+Modelo
+
+</label>
+
+
+<input 
+type="text"
+id="modelo"
+placeholder="Ex: Tormax">
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="linha">
+
+
+<div class="campo">
+
+
+<label for="serie">
+
+Número de Série
+
+</label>
+
+
+<input 
+type="text"
+id="serie">
+
+
+</div>
+
+
+
+
+<div class="campo">
+
+
+<label for="patrimonio">
+
+Número de Patrimônio
+
+</label>
+
+
+<input 
+type="text"
+id="patrimonio">
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="linha">
+
+
+<div class="campo">
+
+
+<label for="localizacao">
+
+Localização
+
+</label>
+
+
+<input 
+type="text"
+id="localizacao"
+placeholder="Ex: Laboratório 01">
+
+
+</div>
+
+
+
+
+
+<div class="campo">
+
+
+<label for="status">
+
+Status
+
+</label>
+
+
+<select id="status">
+
+
+<option>
+Disponível
+</option>
+
+
+<option>
+Em manutenção
+</option>
+
+
+<option>
+Interditada
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<!-- INFORMAÇÕES TÉCNICAS -->
+
+
+<div class="secao">
+
+
+<h2>
+Informações Técnicas
+</h2>
+
+
+
+
+<div class="linha">
+
+
+<div class="campo">
+
+
+<label>
+
+Tensão
+
+</label>
+
+
+<input 
+type="text"
+placeholder="Ex: 220V">
+
+
+</div>
+
+
+
+
+
+<div class="campo">
+
+
+<label>
+
+Potência
+
+</label>
+
+
+<input 
+type="text"
+placeholder="Ex: 5cv">
+
+
+</div>
+
+
+
+
+
+<div class="campo">
+
+
+<label>
+
+Ano de Fabricação
+
+</label>
+
+
+<input 
+type="number">
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- DOCUMENTAÇÃO -->
+
+
+<div class="secao">
+
+
+<h2>
+Documentação
+</h2>
+
+
+
+<div class="campo">
+
+
+<label>
+
+Imagem da Máquina
+
+</label>
+
+
+<input 
+type="file"
+accept="image/*">
+
+
+</div>
+
+
+
+
+<br>
+
+
+
+
+<div class="campo">
+
+
+<label>
+
+Manual da Máquina (PDF)
+
+</label>
+
+
+<input 
+type="file"
+accept=".pdf">
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- DESCRIÇÃO -->
+
+
+<div class="secao">
+
+
+<h2>
+Descrição da Máquina
+</h2>
+
+
+<textarea
+
+id="descricao"
+
+rows="5"
+
+placeholder="Digite informações sobre funcionamento, aplicação e características da máquina">
+
+</textarea>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- OBSERVAÇÕES -->
+
+
+<div class="secao">
+
+
+<h2>
+Observações de Manutenção
+</h2>
+
+
+<textarea
+
+rows="5"
+
+placeholder="Digite cuidados, recomendações ou informações importantes">
+
+</textarea>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- BOTÕES -->
+
+
+<div class="botoes">
+
+
+<button 
+type="submit">
+
+💾 Salvar Máquina
+
+</button>
+
+
+
+<button 
+type="reset"
+class="cancelar">
+
+Cancelar
+
+</button>
+
+
+</div>
+
+
+
+
+
+</form>
+
+
+</section>
+
+
+</main>
+
+
+
+
+<footer>
+
+
+Sistema de Máquinas © 2026
+
+
+</footer>
+
+
+
+
+<script src="js/cadastro.js"></script>
+
+
+</body>
+
+
+</html>

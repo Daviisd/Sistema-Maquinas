@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastrar Manual</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="cabecalho">
+
+        <img src="img/logo.png" class="logo">
+
+        <div class="titulo">
+
+            <h1>Cadastrar Manual</h1>
+
+            <p>Adicionar documentação das máquinas</p>
+
+        </div>
+
+    </div>
+
+</header>
+
+<main class="form-container">
+
+<form id="formManual">
+
+    <div class="secao">
+
+        <h2>Dados do Manual</h2>
+
+        <div class="campo">
+
+            <label>Máquina</label>
+
+            <select id="maquina" required></select>
+
+        </div>
+
+        <br>
+
+        <div class="campo">
+
+            <label>Título</label>
+
+            <input
+                type="text"
+                id="titulo"
+                required>
+
+        </div>
+
+        <br>
+
+        <div class="campo">
+
+            <label>Descrição</label>
+
+            <textarea
+                id="descricao"
+                rows="5"></textarea>
+
+        </div>
+
+        <br>
+
+        <div class="campo">
+
+        <label>Arquivo PDF</label>
+
+            <input
+            type="file"
+            id="arquivo"
+            accept=".pdf"
+            required>
+
+        </div>
+
+    </div>
+
+    <div class="botoes">
+
+        <button type="submit">
+
+            Salvar Manual
+
+        </button>
+
+    </div>
+
+</form>
+
+</main>
+
+<script src="js/cadastro-manual.js"></script>
+
+</body>
+
+</html>

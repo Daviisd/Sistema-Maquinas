@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sugestões</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="cabecalho">
+
+        <img src="img/logo.png" class="logo">
+
+        <div class="titulo">
+
+            <h1>Sistema de Máquinas</h1>
+
+            <p>Sugestões dos Alunos</p>
+
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">🏠 Início</a>
+        <a href="maquinas.html">🖥 Máquinas</a>
+        <a href="manuais.html">📘 Manuais</a>
+        <a href="manutencoes.html">🔧 Manutenções</a>
+        <a href="usuarios.html">👥 Usuários</a>
+        <a href="sugestoes.html">💬 Sugestões</a>
+        <a href="#" id="menuLogout">🚪 Sair</a>
+
+    </nav>
+
+</header>
+
+<main class="container">
+
+    <section class="pesquisa">
+
+        <h2>Pesquisar Sugestão</h2>
+
+        <input
+            type="text"
+            id="campoPesquisa"
+            placeholder="Pesquisar por nome, tipo ou mensagem">
+
+    </section>
+
+    <section class="maquinas">
+
+        <h2>Sugestões Recebidas</h2>
+
+        <div id="listaSugestoes"></div>
+
+    </section>
+
+</main>
+
+<footer>
+
+    Sistema de Máquinas © 2026
+
+</footer>
+
+<script src="js/sugestoes.js"></script>
+
+</body>
+
+</html>

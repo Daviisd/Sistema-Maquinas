@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Usuários</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="cabecalho">
+
+        <img src="img/logo.png" class="logo">
+
+        <div class="titulo">
+
+            <h1>Sistema de Máquinas</h1>
+
+            <p>Gerenciamento de Usuários</p>
+
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">🏠 Início</a>
+        <a href="maquinas.html">🖥 Máquinas</a>
+        <a href="manuais.html">📚 Manuais</a>
+        <a href="manutencoes.html">🔧 Manutenções</a>
+        <a href="cadastro-usuario.html">➕ Novo Usuário</a>
+        <a href="#" id="menuLogout">🚪 Sair</a>
+
+    </nav>
+
+</header>
+
+<main class="container">
+
+    <section class="pesquisa">
+
+        <h2>Pesquisar Usuário</h2>
+
+        <input
+            type="text"
+            id="campoPesquisa"
+            placeholder="Digite o nome ou usuário">
+
+    </section>
+
+    <section>
+
+        <h2>Usuários Cadastrados</h2>
+
+        <div id="listaUsuarios"></div>
+
+    </section>
+
+</main>
+
+<footer>
+
+    Sistema de Máquinas © 2026
+
+</footer>
+
+<script src="js/usuarios.js"></script>
+
+</body>
+
+</html>
