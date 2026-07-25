@@ -9,7 +9,7 @@ const bcrypt = require("bcrypt");
 
 app.use(cors());
 app.use(express.json());
-
+app.use(express.static(path.join(__dirname, "..")));
 
 // ========================================
 // CONFIGURAÇÃO DO UPLOAD DE MANUAIS
@@ -817,7 +817,7 @@ app.delete("/manuais/:id", async (req, res) => {
    SERVIDOR
 ===========================================*/
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.get("/dashboard", async (req, res) => {
 
@@ -1166,7 +1166,11 @@ app.delete("/sugestoes/:id", async (req, res) => {
 
 });
 
+app.get("/", (req, res) => {
 
+    res.sendFile(path.join(__dirname, "..", "index.html"));
+
+});
 
 app.listen(PORT, () => {
 
