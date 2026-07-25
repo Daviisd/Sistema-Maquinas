@@ -18,6 +18,9 @@
   ],
   "author": "Davi Lorenzon Giacomel",
   "license": "ISC",
+  "engines": {
+  "node": "22.x"
+  },
   "type": "commonjs",
   "dependencies": {
     "bcrypt": "^6.0.0",
