@@ -4,7 +4,7 @@ async function carregarManuais() {
 
     try {
 
-        const resposta = await fetch("http://localhost:3000/manuais");
+        const resposta = await fetch("/manuais");
 
         todosManuais = await resposta.json();
 
@@ -68,19 +68,20 @@ function mostrarManuais(lista) {
             <p>${manual.descricao}</p>
 
         </div>
-
         <a
-            href="http://localhost:3000/uploads/manuais/${manual.arquivo}"
+            href="/uploads/manuais/${manual.arquivo}"
             target="_blank">
 
             <button>
 
-                📥 Abrir Manual
+        📥 Abrir Manual
 
-            </button>
+         </button>
 
         </a>
 
+
+    
         ${botoesInstrutor}
 
     </div>
@@ -127,7 +128,7 @@ async function excluirManual(id){
 
     const resposta = await fetch(
 
-        `http://localhost:3000/manuais/${id}`,
+        `/manuais/${id}`,
 
         {
 

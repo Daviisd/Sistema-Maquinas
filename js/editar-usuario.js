@@ -4,7 +4,7 @@ async function carregarUsuario(){
 
     const resposta = await fetch(
 
-        `http://localhost:3000/usuarios/${id}`
+        `/usuarios/${id}`
 
     );
 
@@ -36,7 +36,7 @@ document.getElementById("formUsuario").addEventListener("submit", async function
 
     const resposta = await fetch(
 
-        `http://localhost:3000/usuarios/${id}`,
+        `/usuarios/${id}`,
 
         {
 

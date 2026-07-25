@@ -38,7 +38,7 @@ formulario.addEventListener("submit", async function(evento){
 
 
         const resposta = await fetch(
-            "http://localhost:3000/maquinas",
+            "/maquinas",
             {
 
                 method:"POST",

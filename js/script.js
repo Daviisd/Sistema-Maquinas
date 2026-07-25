@@ -27,7 +27,7 @@ async function carregarDashboard(){
 
     try{
 
-        const resposta = await fetch("http://localhost:3000/dashboard");
+        const resposta = await fetch("/dashboard");
 
         const dados = await resposta.json();
 
@@ -60,7 +60,7 @@ async function carregarMaquinas() {
 
     try {
 
-        const resposta = await fetch("http://localhost:3000/maquinas");
+        const resposta = await fetch("/maquinas");
 
         todasMaquinas = await resposta.json();
 
@@ -263,7 +263,7 @@ if (formSugestao) {
 
             const resposta = await fetch(
 
-                "http://localhost:3000/sugestoes",
+                "/sugestoes",
 
                 {
 

@@ -14,7 +14,7 @@ async function carregarMaquinas() {
 
     try {
 
-        const resposta = await fetch("http://localhost:3000/maquinas");
+        const resposta = await fetch("/maquinas");
 
         todasMaquinas = await resposta.json();
 

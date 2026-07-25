@@ -8,7 +8,7 @@ async function carregarMaquina() {
 
     try {
 
-        const resposta = await fetch(`http://localhost:3000/maquinas/${id}`);
+        const resposta = await fetch(`/maquinas/${id}`);
 
         if (!resposta.ok) {
 

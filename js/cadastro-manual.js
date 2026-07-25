@@ -8,7 +8,7 @@ async function carregarMaquinas(){
 
     try{
 
-        const resposta = await fetch("http://localhost:3000/maquinas");
+        const resposta = await fetch("/maquinas");
 
         const maquinas = await resposta.json();
 
@@ -74,7 +74,7 @@ document.getElementById("formManual").addEventListener("submit", async function(
 
         const resposta = await fetch(
 
-            "http://localhost:3000/manuais",
+            "/manuais",
 
             {
 

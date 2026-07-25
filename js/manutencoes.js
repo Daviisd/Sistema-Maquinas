@@ -6,7 +6,7 @@ async function carregarManutencoes(){
 
     try{
 
-        const resposta = await fetch("http://localhost:3000/manutencoes");
+        const resposta = await fetch("/manutencoes");
 
         todasManutencoes = await resposta.json();
 
@@ -138,7 +138,7 @@ async function excluirManutencao(id){
 
         const resposta = await fetch(
 
-            `http://localhost:3000/manutencoes/${id}`,
+            `/manutencoes/${id}`,
 
             {
 

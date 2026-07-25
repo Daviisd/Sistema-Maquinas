@@ -20,7 +20,7 @@ formulario.addEventListener("submit", async function(evento){
 
         const resposta = await fetch(
 
-            "http://localhost:3000/usuarios",
+            "/usuarios",
 
             {
 

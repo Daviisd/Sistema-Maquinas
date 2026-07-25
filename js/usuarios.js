@@ -19,7 +19,7 @@ async function carregarUsuarios() {
 
     try {
 
-        const resposta = await fetch("http://localhost:3000/usuarios");
+        const resposta = await fetch("/usuarios");
 
         todosUsuarios = await resposta.json();
 
@@ -141,7 +141,7 @@ async function excluirUsuario(id) {
 
         const resposta = await fetch(
 
-            `http://localhost:3000/usuarios/${id}`,
+            `/usuarios/${id}`,
 
             {
 

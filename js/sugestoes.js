@@ -14,7 +14,7 @@ async function carregarSugestoes() {
 
     try {
 
-        const resposta = await fetch("http://localhost:3000/sugestoes");
+        const resposta = await fetch("/sugestoes");
 
         todasSugestoes = await resposta.json();
 
@@ -110,7 +110,7 @@ async function excluirSugestao(id){
 
     const resposta = await fetch(
 
-        `http://localhost:3000/sugestoes/${id}`,
+        `/sugestoes/${id}`,
 
         {
 
