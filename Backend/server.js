@@ -1171,7 +1171,7 @@ app.delete("/sugestoes/:id", async (req, res) => {
 });*/
 
 app.get("/", (req, res) => {
-    res.send("TESTE DAVI");
+    res.sendFile(path.join(__dirname, "..", "login.html"));
 });
 
 app.listen(PORT, () => {
