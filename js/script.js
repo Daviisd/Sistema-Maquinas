@@ -5,10 +5,12 @@ let todasMaquinas = [];
 // ==========================================
 
 const perfil = localStorage.getItem("perfil");
+const usuario = localStorage.getItem("usuario");
 
-if (!perfil) {
+if (!perfil || !usuario) {
     window.location.href = "login.html";
 }
+
 
 const menuUsuarios = document.getElementById("menuUsuarios");
 
@@ -155,6 +157,8 @@ if(menuLogout){
         localStorage.removeItem("perfil");
 
         localStorage.removeItem("usuario");
+
+        localStorage.removeItem("idUsuario");
 
         window.location.href = "login.html";
 
