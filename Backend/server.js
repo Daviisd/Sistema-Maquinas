@@ -9,7 +9,7 @@ const bcrypt = require("bcrypt");
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "..")));
+
 
 
 // ========================================
@@ -77,16 +77,6 @@ let db;
 })();
 
 
-
-/* ===========================================
-   ROTA INICIAL
-===========================================*/
-
-app.get("/", (req, res) => {
-
-    res.send("API do Sistema de Máquinas");
-
-});
 
 /* ===========================================
    LOGIN
@@ -1173,17 +1163,15 @@ app.delete("/sugestoes/:id", async (req, res) => {
 
 });
 
-app.get("/", (req, res) => {
 
-    res.sendFile(path.join(__dirname, "..", "index.html"));
-
-});
-
-
-app.get("/", (req, res) => {
+/*app.get("/", (req, res) => {
 
     res.redirect("/login.html");
 
+});*/
+
+app.get("/", (req, res) => {
+    res.send("TESTE DAVI");
 });
 
 app.listen(PORT, () => {
