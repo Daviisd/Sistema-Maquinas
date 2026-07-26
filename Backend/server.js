@@ -16,7 +16,13 @@ app.use(express.json());
 // FRONTEND
 // ========================================
 
-app.use(express.static(path.join(__dirname, "..")));
+const frontendPath = path.resolve(__dirname, "..");
+
+console.log("Frontend:", frontendPath);
+
+app.use(express.static(frontendPath));
+
+
 
 app.get("/index.html", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "index.html"));
