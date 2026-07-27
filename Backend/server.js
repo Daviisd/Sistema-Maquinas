@@ -35,24 +35,26 @@ app.get("/index.html", (req, res) => {
 
 const storage = multer.diskStorage({
 
-    destination: function(req, file, cb){
+    destination(req, file, cb){
 
         cb(null, "uploads/manuais");
 
     },
 
-    filename: function(req, file, cb){
+    filename(req, file, cb){
 
-        const nomeArquivo =
-            Date.now() +
-            "-" +
-            file.originalname.replace(/\s+/g,"_");
+        cb(
 
-        cb(null, nomeArquivo);
+            null,
+
+            Date.now() + "-" + file.originalname.replace(/\s+/g,"_")
+
+        );
 
     }
 
 });
+
 
 const upload = multer({
 
@@ -281,54 +283,84 @@ app.get("/maquinas/:id/qrcode", async (req, res) => {
 
 // Cadastrar
 
-app.post("/maquinas", async (req, res) => {
+app.post("/maquinas", upload.single("manual"), async (req, res) => {
 
-    console.log("=== NOVA MÁQUINA ===");
-    console.log(req.body);
-
-    try {
+    try{
 
         const {
+
             nome,
             fabricante,
             modelo,
             localizacao,
             status,
             descricao
-        } = req.body;
 
-        console.log(nome, fabricante, modelo);
+        } = req.body;
 
         const resultado = await db.run(
 
             `INSERT INTO maquinas
-            (nome, fabricante, modelo, localizacao, status, descricao)
-            VALUES (?, ?, ?, ?, ?, ?)`,
+            (nome,fabricante,modelo,localizacao,status,descricao)
+            VALUES(?,?,?,?,?,?)`,
 
             [
+
                 nome,
                 fabricante,
                 modelo,
                 localizacao,
                 status,
                 descricao
+
             ]
 
         );
 
-        console.log("ID inserido:", resultado.lastID);
+        const maquinaId = resultado.lastID;
+
+        if(req.file){
+
+            await db.run(
+
+                `INSERT INTO manuais
+                (maquinaId,titulo,arquivo,descricao)
+                VALUES(?,?,?,?)`,
+
+                [
+
+                    maquinaId,
+
+                    req.file.originalname,
+
+                    req.file.filename,
+
+                    "Manual da máquina"
+
+                ]
+
+            );
+
+        }
 
         res.status(201).json({
-            mensagem: "Máquina cadastrada com sucesso!",
-            id: resultado.lastID
+
+            mensagem:"Máquina cadastrada com sucesso!",
+
+            id: maquinaId
+
         });
 
-    } catch (erro) {
+    }
+
+    catch(erro){
 
         console.error(erro);
 
         res.status(500).json({
-            mensagem: "Erro ao cadastrar máquina."
+
+            mensagem:"Erro ao cadastrar máquina."
+
         });
 
     }

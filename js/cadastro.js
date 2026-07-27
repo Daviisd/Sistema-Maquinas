@@ -1,86 +1,76 @@
 const formulario = document.getElementById("formMaquina");
 
-
 formulario.addEventListener("submit", async function(evento){
-
 
     evento.preventDefault();
 
+    const formData = new FormData();
 
+    formData.append(
+        "nome",
+        document.getElementById("nome").value
+    );
 
-    const maquina = {
+    formData.append(
+        "fabricante",
+        document.getElementById("fabricante").value
+    );
 
+    formData.append(
+        "modelo",
+        document.getElementById("modelo").value
+    );
 
-        nome: document.getElementById("nome").value,
+    formData.append(
+        "localizacao",
+        document.getElementById("localizacao").value
+    );
 
+    formData.append(
+        "status",
+        document.getElementById("status").value
+    );
 
-        fabricante: document.getElementById("fabricante").value,
+    formData.append(
+        "descricao",
+        document.getElementById("descricao").value
+    );
 
+    // Manual PDF
+    const manual = document.getElementById("manual").files[0];
 
-        modelo: document.getElementById("modelo").value,
+    if(manual){
 
-
-        localizacao: document.getElementById("localizacao").value,
-
-
-        status: document.getElementById("status").value,
-
-
-        descricao: document.getElementById("descricao").value
-
-
-    };
-
-
-
-
-    try {
-
-
-        const resposta = await fetch(
-            "/maquinas",
-            {
-
-                method:"POST",
-
-                headers:{
-                    "Content-Type":"application/json"
-                },
-
-                body:JSON.stringify(maquina)
-
-            }
-        );
-
-
-
-        const dados = await resposta.json();
-
-
-
-        alert(dados.mensagem);
-
-
-
-        formulario.reset();
-
-
-
-    } catch(erro){
-
-
-        console.error(
-            "Erro:",
-            erro
-        );
-
-
-        alert(
-            "Erro ao cadastrar máquina"
-        );
-
+        formData.append("manual", manual);
 
     }
 
+    try{
+
+        const resposta = await fetch("/maquinas",{
+
+            method:"POST",
+
+            body: formData
+
+        });
+
+        const dados = await resposta.json();
+
+        alert(dados.mensagem);
+
+        formulario.reset();
+
+        window.location.href = `maquina.html?id=${dados.id}`;
+
+    }
+
+    catch(erro){
+
+        console.error(erro);
+
+        alert("Erro ao cadastrar máquina.");
+
+    }
 
 });
