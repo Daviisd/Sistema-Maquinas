@@ -20,9 +20,9 @@ const frontendPath = path.resolve(__dirname, "..");
 
 console.log("Frontend:", frontendPath);
 
-app.use(express.static(frontendPath));
-
-
+app.use(express.static(frontendPath, {
+    index: false
+}));
 
 app.get("/index.html", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "index.html"));
