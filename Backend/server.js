@@ -256,7 +256,7 @@ app.get("/maquinas/:id/qrcode", async (req, res) => {
             });
         }
 
-        const url = `https://sistema-maquinas.onrender.com/maquina.html?id=${maquina.id}`;
+        const url = `https://sistema-maquinas.onrender.com/consulta.html?id=${maquina.id}`;
 
         const imagem = await QRCode.toDataURL(url);
 
