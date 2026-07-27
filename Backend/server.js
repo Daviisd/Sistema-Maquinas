@@ -239,6 +239,8 @@ app.get("/maquinas/:id", async (req, res) => {
 
 });
 
+console.log("Rota QRCode carregada");
+
 app.get("/maquinas/:id/qrcode", async (req, res) => {
 
     try {
