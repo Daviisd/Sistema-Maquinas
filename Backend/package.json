@@ -19,7 +19,7 @@
   "author": "Davi Lorenzon Giacomel",
   "license": "ISC",
   "engines": {
-  "node": "22.x"
+    "node": "22.x"
   },
   "type": "commonjs",
   "dependencies": {
@@ -27,6 +27,7 @@
     "cors": "^2.8.5",
     "express": "^5.2.1",
     "multer": "^2.2.0",
+    "qrcode": "^1.5.4",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7"
   },
