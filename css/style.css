@@ -732,3 +732,17 @@ input[type=file]{
     margin-top:12px;
 
 }
+
+.usuario-card{
+
+    background: #fff;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    margin-bottom: 30px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+
+}
