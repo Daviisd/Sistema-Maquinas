@@ -366,24 +366,26 @@ tbody tr:hover{
 
 }
 
-.qrcode-container{
+.qrcode-container {
 
-    text-align:center;
+    text-align: center;
 
-    margin-top:40px;
+    margin: 30px 0;
 
 }
 
-#qrcodeImagem{
+#qrcodeImagem {
 
-    width:220px;
+    width: 220px;
 
-    background:white;
+    max-width: 100%;
 
-    padding:15px;
+    background: white;
 
-    border-radius:12px;
+    padding: 12px;
 
-    box-shadow:0 0 10px rgba(0,0,0,.15);
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 
 }

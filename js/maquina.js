@@ -130,19 +130,9 @@ async function carregarQRCode(id) {
 
         const imagem = document.getElementById("qrcodeImagem");
 
-        const botao = document.getElementById("baixarQr");
-
         if (imagem) {
 
             imagem.src = dados.qrcode;
-
-        }
-
-        if (botao) {
-
-            botao.href = dados.qrcode;
-
-            botao.download = `QR_${dados.maquina}.png`;
 
         }
 
@@ -268,12 +258,71 @@ if (botaoExcluir) {
 
 }
 
-// ======================================
-// INICIAR PÁGINA
-// ======================================
+async function carregarManual() {
+
+    try {
+
+        const resposta = await fetch("/manuais");
+
+        if (!resposta.ok) {
+
+            throw new Error("Erro ao buscar manuais.");
+
+        }
+
+        const manuais = await resposta.json();
+
+        const manual = manuais.find(m => m.maquinaId == id);
+
+        const container = document.getElementById("manualContainer");
+
+        if (!manual) {
+
+            container.innerHTML = `
+                <p>Nenhum manual cadastrado para esta máquina.</p>
+            `;
+
+            return;
+
+        }
+
+        container.innerHTML = `
+
+            <h3>${manual.titulo}</h3>
+
+            <p>${manual.descricao || ""}</p>
+
+            <a href="/uploads/manuais/${manual.arquivo}" target="_blank">
+
+                📖 Abrir Manual
+
+            </a>
+
+            <br><br>
+
+            <a href="/uploads/manuais/${manual.arquivo}" download>
+
+                📥 Baixar Manual
+
+            </a>
+
+        `;
+
+    }
+
+    catch (erro) {
+
+        console.error(erro);
+
+    }
+
+}
+
 
 carregarMaquina();
 
 carregarManutencoes();
 
 carregarQRCode(id);
+
+carregarManual();
