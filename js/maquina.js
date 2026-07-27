@@ -1,11 +1,8 @@
 // ======================================
 // LER O ID DA MÁQUINA PELA URL
-// Exemplo:
-// maquina.html?id=1
 // ======================================
 
 const parametros = new URLSearchParams(window.location.search);
-
 const id = parametros.get("id");
 
 // ======================================
@@ -19,23 +16,16 @@ async function carregarMaquina() {
         const resposta = await fetch(`/maquinas/${id}`);
 
         if (!resposta.ok) {
-
             throw new Error("Máquina não encontrada.");
-
         }
 
         const maquina = await resposta.json();
 
         document.getElementById("nomeMaquina").textContent = maquina.nome;
-
         document.getElementById("fabricante").textContent = maquina.fabricante;
-
         document.getElementById("modelo").textContent = maquina.modelo;
-
         document.getElementById("localizacao").textContent = maquina.localizacao;
-
         document.getElementById("status").textContent = maquina.status;
-
         document.getElementById("descricao").textContent = maquina.descricao;
 
     }
@@ -61,9 +51,7 @@ async function carregarManutencoes() {
         const resposta = await fetch(`/manutencoes/${id}`);
 
         if (!resposta.ok) {
-
             throw new Error("Erro ao buscar manutenções.");
-
         }
 
         const manutencoes = await resposta.json();
@@ -123,6 +111,52 @@ async function carregarManutencoes() {
 }
 
 // ======================================
+// CARREGAR QR CODE
+// ======================================
+
+async function carregarQRCode(id) {
+
+    try {
+
+        const resposta = await fetch(`/maquinas/${id}/qrcode`);
+
+        if (!resposta.ok) {
+
+            throw new Error("Erro ao gerar QR Code.");
+
+        }
+
+        const dados = await resposta.json();
+
+        const imagem = document.getElementById("qrcodeImagem");
+
+        const botao = document.getElementById("baixarQr");
+
+        if (imagem) {
+
+            imagem.src = dados.qrcode;
+
+        }
+
+        if (botao) {
+
+            botao.href = dados.qrcode;
+
+            botao.download = `QR_${dados.maquina}.png`;
+
+        }
+
+    }
+
+    catch (erro) {
+
+        console.error("Erro ao carregar QR Code:", erro);
+
+    }
+
+}
+
+// ======================================
 // CONTROLE DE PERMISSÃO
 // ======================================
 
@@ -134,7 +168,7 @@ const botaoEditar = document.getElementById("btnEditar");
 
 const botaoExcluir = document.getElementById("btnExcluir");
 
-// Apenas instrutor pode editar ou cadastrar manutenção
+// Apenas instrutor pode editar
 
 if (perfil !== "instrutor") {
 
@@ -173,7 +207,7 @@ if (botaoNovaManutencao) {
 }
 
 // ======================================
-// BOTÃO EDITAR MÁQUINA
+// BOTÃO EDITAR
 // ======================================
 
 if (botaoEditar) {
@@ -187,7 +221,7 @@ if (botaoEditar) {
 }
 
 // ======================================
-// BOTÃO EXCLUIR MÁQUINA
+// BOTÃO EXCLUIR
 // ======================================
 
 if (botaoExcluir) {
@@ -208,17 +242,11 @@ if (botaoExcluir) {
 
         try {
 
-            const resposta = await fetch(
+            const resposta = await fetch(`/maquinas/${id}`, {
 
-                `/maquinas/${id}`,
+                method: "DELETE"
 
-                {
-
-                    method: "DELETE"
-
-                }
-
-            );
+            });
 
             const dados = await resposta.json();
 
@@ -240,12 +268,12 @@ if (botaoExcluir) {
 
 }
 
-
-
 // ======================================
-// INICIAR A PÁGINA
+// INICIAR PÁGINA
 // ======================================
 
 carregarMaquina();
 
 carregarManutencoes();
+
+carregarQRCode(id);

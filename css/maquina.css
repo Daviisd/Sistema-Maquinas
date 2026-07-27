@@ -365,3 +365,25 @@ tbody tr:hover{
     }
 
 }
+
+.qrcode-container{
+
+    text-align:center;
+
+    margin-top:40px;
+
+}
+
+#qrcodeImagem{
+
+    width:220px;
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    box-shadow:0 0 10px rgba(0,0,0,.15);
+
+}
