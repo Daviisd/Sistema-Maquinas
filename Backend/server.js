@@ -1,3 +1,4 @@
+const QRCode = require("qrcode");
 const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
@@ -232,6 +233,43 @@ app.get("/maquinas/:id", async (req, res) => {
 
         res.status(500).json({
             mensagem: "Erro ao buscar máquina."
+        });
+
+    }
+
+});
+
+app.get("/maquinas/:id/qrcode", async (req, res) => {
+
+    try {
+
+        const maquina = await db.get(
+            "SELECT * FROM maquinas WHERE id = ?",
+            [req.params.id]
+        );
+
+        if (!maquina) {
+            return res.status(404).json({
+                mensagem: "Máquina não encontrada."
+            });
+        }
+
+        const url = `https://sistema-maquinas.onrender.com/maquina.html?id=${maquina.id}`;
+
+        const imagem = await QRCode.toDataURL(url);
+
+        res.json({
+            maquina: maquina.nome,
+            url,
+            qrcode: imagem
+        });
+
+    } catch (erro) {
+
+        console.error(erro);
+
+        res.status(500).json({
+            mensagem: "Erro ao gerar QR Code."
         });
 
     }
